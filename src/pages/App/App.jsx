@@ -3,30 +3,33 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
-import NavBar from '../../components/NavBar/NavBar';
+import HomePage from '../HomePage/HomePage';
+import AboutPage from '../AboutPage/AboutPage';
+import ProfilePage from '../ProfilePage/ProfilePage';
+import Navigation from '../../components/Navigation/Navigation';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
   return (
     <main className="App">
-      { user ?
+      <Navigation user={user} setUser={setUser}/>
           <>
-            <NavBar user={user} setUser={setUser}/>
             <Switch>
-              <Route path="/orders/new">
-                <NewOrderPage />
+              <Route path="/about">
+                <AboutPage />
               </Route>
-              <Route path="/orders">
-                <OrderHistoryPage />
+              <Route path="/login">
+                <AuthPage setUser={setUser}/>
               </Route>
-              <Redirect to="/orders" />
+              <Route path="/profile">
+                <ProfilePage user={user}/>
+              </Route>
+              <Route path="/">
+                <HomePage />
+              </Route>
+              <Redirect to="/" />
             </Switch>
           </>
-        :
-          <AuthPage setUser={setUser}/>
-      }
     </main>
   );
 }

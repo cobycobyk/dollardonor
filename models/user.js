@@ -18,7 +18,10 @@ const userSchema = new Schema({
     trim: true,
     minLength: 3,
     required: true
-  }
+  },
+  bio: String,
+  avatar: String,
+  state: String,
 }, {
   timestamps: true,
   toJSON: {
