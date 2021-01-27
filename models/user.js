@@ -22,6 +22,10 @@ const userSchema = new Schema({
   bio: String,
   avatar: String,
   state: String,
+  zipcode: Number,
+  isAdmin: {type: Boolean, default: false},
+  isMarketer: {type: Boolean, default: false},
+  isAccountant: {type: Boolean, default: false},
 }, {
   timestamps: true,
   toJSON: {

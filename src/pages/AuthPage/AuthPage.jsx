@@ -7,13 +7,20 @@ export default function AuthPage({ setUser }) {
 
   return (
     <main>
-      <h1>AuthPage</h1>
       {showLogin ?
+      <>
+        <h1>Log In</h1>
         <LoginForm setUser={setUser} />
+        <br/>
+        <h5>Not A User Yet?</h5>
+        </>
         :
+        <>
+        <h1>Sign Up</h1>
         <SignUpForm setUser={setUser} />
+        </>
       }
-      <button onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'Sign Up' : 'Log in'}</button>
+      <button className="login-switch-button" onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'Create Account' : 'Log In'}</button>
     </main>
   );
 }
