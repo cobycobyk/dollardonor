@@ -4,7 +4,7 @@ const donation = require('./donation');
 
 const lineItemSchema = new Schema({
   qty: {type: Number, default: 1},
-  item: donationSchema
+  item: donation,
 }, {
   timestamps: true,
   toJSON: {virtuals: true}
