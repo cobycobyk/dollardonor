@@ -17,3 +17,23 @@ img {
 .form-control.shadow-0:focus {
   box-shadow: none;
 }
+
+.bg-coral {
+  background-color: var(--coral);
+}
+.bg-mint {
+  background-color: var(--mint);
+}
+
+.social {
+  width: 40px;
+}
+
+.newsletter {
+  width: 30px;
+}
+.newsletter-button {
+  padding: 0;
+  background-color: var(--mint);
+  border: none;
+}

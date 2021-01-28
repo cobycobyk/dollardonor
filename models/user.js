@@ -26,7 +26,7 @@ const userSchema = new Schema({
   isAdmin: {type: Boolean, default: false},
   isMarketer: {type: Boolean, default: false},
   isAccountant: {type: Boolean, default: false},
-  website: {type: String, default: 'www.dollardonor.com'}
+  website: {type: String, default: 'www.dollardonor.com'},
 }, {
   timestamps: true,
   toJSON: {
