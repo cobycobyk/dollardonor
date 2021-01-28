@@ -6,7 +6,14 @@ module.exports = {
   create,
   login,
   checkToken,
+  update,
 };
+
+async function update(req, res) {
+  const user = await User.findByIdAndUpdate(req.params.id, req.body, {new: true});
+  const token = createJWT(user);
+  res.status(200).json(token);
+}
 
 //for TESTING purposes only
 function checkToken(req, res) {

@@ -1,64 +1,53 @@
-import { Component } from 'react';
+import { useState } from 'react';
 import { signUp } from '../../utilities/users-service';
+import { useHistory } from 'react-router-dom';
 
-export default class SignUpForm extends Component {
-  state = {
+export default function SignUp({ setUser }) {
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirm: '',
-    error: '',
-  };
+  });
+  const history = useHistory()
 
-  handleSubmit = async (evt) => {
+  const [error, setError] = useState('')
+
+  async function handleSubmit(evt) {
     evt.preventDefault();
     try {
-      const formData = {...this.state};
-      delete formData.error;
       delete formData.confirm;
-      //or can be put in like this
-      //const formData = {
-      //   name: this.state.name,
-      //   emai: this.state.email,
-      //   password: this.state.password
-      // };
-      // // or
-      // const {name, email, password} = this.state;
-      // const formData = {name, email, password};
       const user = await signUp(formData);
-      this.props.setUser(user)
+      setUser(user);
+      history.push('/')
     } catch { //can be catch (err)
       //an error occured
-      this.setState({ error: 'Sign Up Failed - Try Again' });
+      setError('Sign Up Failed - Try Again');
     }
   }
 
-  handleChange = (evt) => {
-    this.setState({
-      [evt.target.name]: evt.target.value,
-      error: ''
-    });
-  };
-
-  render() {
-    const disable = this.state.password !== this.state.confirm;
-    return (
-      <div className="login-form">
-        <div className="form-container">
-          <form autoComplete="off" onSubmit={this.handleSubmit}>
-            <label>Name</label>
-            <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
-            <label>Email</label>
-            <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
-            <label>Password</label>
-            <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
-            <label>Confirm</label>
-            <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
-            <button type="submit" disabled={disable}>SIGN UP</button>
-          </form>
-        </div>
-        <p className="error-message">&nbsp;{this.state.error}</p>
-      </div>
-    );
+  function handleChange(evt) {
+    setFormData({...formData, [evt.target.name]: evt.target.value});
+    setError('');
   }
+
+  const disable = formData.password !== formData.confirm;
+  return (
+    <div className="login-form">
+      <div className="form-container">
+        <form className="login-form-form" autoComplete="off" onSubmit={handleSubmit}>
+          <label>Name</label>
+          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+          <label>Email</label>
+          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+          <label>Password</label>
+          <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+          <label>Confirm</label>
+          <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
+          <button type="submit" disabled={disable}>SIGN UP</button>
+        </form>
+      </div>
+      <p className="error-message">&nbsp;{error}</p>
+    </div>
+  );
 }

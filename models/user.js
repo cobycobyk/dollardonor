@@ -19,13 +19,14 @@ const userSchema = new Schema({
     minLength: 3,
     required: true
   },
-  bio: String,
-  avatar: String,
-  state: String,
-  zipcode: Number,
+  bio: {type: String, default: 'I am a Dollar Donor'},
+  avatar:{type: String, default: "https://i.imgur.com/T7GiuOc.png"},
+  state: {type: String, default: ''},
+  zipcode: {type: Number, default: 92109},
   isAdmin: {type: Boolean, default: false},
   isMarketer: {type: Boolean, default: false},
   isAccountant: {type: Boolean, default: false},
+  website: {type: String, default: 'www.dollardonor.com'}
 }, {
   timestamps: true,
   toJSON: {

@@ -24,6 +24,15 @@ export async function login(credentials){
     throw new Error('Invalid Login')
   }
 }
+export async function update(formData){
+  try {
+    const token = await usersAPI.updateUser(formData);
+    localStorage.setItem('token', token)
+    return getUser();
+  } catch {
+    throw new Error('Invalid Update')
+  }
+}
 
 export function getToken() {
   // getItem returns null if there's no string
@@ -43,14 +52,4 @@ export function getUser() {
   const token = getToken();
   // If there's a token, return the user in the payload, otherwise return null
   return token ? JSON.parse(atob(token.split('.')[1])).user : null;
-}
-
-// this is only for TESTING validation the token
-// you do not need this in your app
-export function checkToken() {
-  return usersAPI.checkToken()
-    .then(dateStr => new Date(dateStr));
-  // *BELOW is same code as a above but in async/await
-  // const dt = new Date(await usersAPI.checkToken())
-  // return dt
 }
