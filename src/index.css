@@ -23,7 +23,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--grey-4);
   padding: 1vmin;
-  height: 100vh;
+  height: 100%;
 }
 
 code {
@@ -124,6 +124,11 @@ input {
 
 input:focus {
   border-color: var(--mint);
+}
+
+.btn-sub {
+  color: var(--yellow);
+  background-color: var(--yellow);
 }
 
 button, a.button {

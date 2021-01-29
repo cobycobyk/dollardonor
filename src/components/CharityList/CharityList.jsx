@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import CharityListItem from '../CharityListItem/CharityListItem';
 
 export default function CharityList({ charity }) {
   const pathName = charity.name.replace(/\s+/g, '').toLowerCase();
@@ -14,7 +15,7 @@ export default function CharityList({ charity }) {
           <Link 
           className="btn btn-primary"
           to={{
-            pathname: `/charities/${pathName}`,
+            pathname: 'charity-detail',
             state: {charity}
           }}
           >

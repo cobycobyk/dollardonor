@@ -20,7 +20,7 @@ export default function Navigation({ user, setUser }) {
           {user ?
             <NavDropdown title="Account" id="basic-nav-dropdown">
               <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">My Donations</NavDropdown.Item>
+              <NavDropdown.Item href="/pledges">My Donations</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/" onClick={handleLogOut}>Logout</NavDropdown.Item>
             </NavDropdown>

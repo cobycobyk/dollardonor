@@ -9,6 +9,7 @@ const charitySchema = new Schema({
   zip: { type: Number },
   ein: { type: String },
   phone: { type: Number },
+  logo: { type: String },
   picture: { type: String },
   snippet: { type: String },
   mission: { type: String},

@@ -10,6 +10,8 @@ import AboutPage from '../AboutPage/AboutPage';
 import ProfileDetailPage from '../ProfileDetailPage/ProfileDetailPage';
 import EditProfilePage from '../EditProfilePage/EditProfilePage';
 import CharitiesListPage from '../CharitiesListPage/CharitiesListPage';
+import CharityDetailPage from '../CharityDetailPage/CharityDetailPage';
+import MyDonationsPage from '../MyDonationsPage/MyDonationsPage';
 import Navigation from '../../components/Navigation/Navigation';
 import Footer from '../../components/Footer/Footer';
 
@@ -45,11 +47,17 @@ export default function App() {
               <Route path="/charities">
                 <CharitiesListPage charities={charities}/>
               </Route>
+              <Route path="/charity-detail">
+                <CharityDetailPage />
+              </Route>
               <Route path="/profile/edit">
                 <EditProfilePage user={user} handleUpdateUser={handleUpdateUser}/>
               </Route>
               <Route path="/profile">
                 <ProfileDetailPage user={user}/>
+              </Route>
+              <Route path="/pledges">
+                <MyDonationsPage user={user}/>
               </Route>
               <Route path="/">
                 <HomePage charities={charities}/>
