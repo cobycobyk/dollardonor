@@ -16,6 +16,7 @@ export default function Navigation({ user, setUser }) {
         <Nav className="mr-auto">
           <Nav.Link href="/"><img src="https://i.imgur.com/SAi3uRX.png" alt="logohome" height="20" /></Nav.Link>
           <Nav.Link href="/about">About</Nav.Link>
+          <Nav.Link href="/charities">Our Charities</Nav.Link>
           {user ?
             <NavDropdown title="Account" id="basic-nav-dropdown">
               <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>

@@ -1,9 +1,14 @@
 import './HomePage.css';
-import CharityCard from '../../components/CharityCard/CharityCard'
+import CharityList from '../../components/CharityList/CharityList'
 import { Carousel } from 'react-bootstrap';
 
-export default function HomePage() {
-
+export default function HomePage({ charities }) {
+  const chars = charities.map(charity => 
+    <CharityList
+      key={charity._id}
+      charity={charity}
+      />
+    );
   return (
     <>
       <Carousel >
@@ -45,7 +50,7 @@ export default function HomePage() {
       </Carousel>
       <br/>
       <div className="row text-center">
-        <div><CharityCard /></div>
+        <div>{chars}</div>
       </div>
     </>
   );

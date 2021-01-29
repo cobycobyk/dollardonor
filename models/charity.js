@@ -6,7 +6,11 @@ const charitySchema = new Schema({
   street: { type: String, required: true },
   city: {type: String, required: true},
   state: {type: String, required: true},
-  phone: { type: String },
+  zip: { type: Number },
+  ein: {type: String},
+  phone: { type: Number },
+  picture: { type: String },
+  mission: { type: String},
 }, {
   timestamps: true,
 });
