@@ -8,7 +8,7 @@ export default function CharityList({ charity }) {
         <img className="card-img-top" src={charity.picture} alt="" />
         <div className="card-body">
           <h4 className="card-title">{charity.name}</h4>
-          <p className="card-text">{charity.mission}</p>
+          <p className="card-text">{charity.snippet}</p>
         </div>
         <div className="card-footer">
           <Link 

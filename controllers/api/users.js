@@ -10,7 +10,7 @@ module.exports = {
 };
 
 async function update(req, res) {
-  const user = await User.findByIdAndUpdate(req.params.id, req.body, {new: true});
+  const user = await User.findByIdAndUpdate(req.user._id, req.body, {new: true});
   const token = createJWT(user);
   res.status(200).json(token);
 }
