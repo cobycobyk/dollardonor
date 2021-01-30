@@ -12,6 +12,7 @@ import EditProfilePage from '../EditProfilePage/EditProfilePage';
 import CharitiesListPage from '../CharitiesListPage/CharitiesListPage';
 import CharityDetailPage from '../CharityDetailPage/CharityDetailPage';
 import MyDonationsPage from '../MyDonationsPage/MyDonationsPage';
+import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import Navigation from '../../components/Navigation/Navigation';
 import Footer from '../../components/Footer/Footer';
 
@@ -55,6 +56,9 @@ export default function App() {
               </Route>
               <Route path="/profile">
                 <ProfileDetailPage user={user}/>
+              </Route>
+              <Route path="/pledges/new">
+                <NewOrderPage user={user}/>
               </Route>
               <Route path="/pledges">
                 <MyDonationsPage user={user}/>

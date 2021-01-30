@@ -17,7 +17,7 @@ export default function CharityListItem({ charity, handleSubscribe }) {
       <section className="bgimage d-flex flex-reverse-column" style={hero}>
               <Link className="btn btn-xl btn-sub align-self-center"
                 to={{
-                  pathname: '/orders/new',
+                  pathname: '/pledges/new',
                   state: {charity}
                 }}
               >
