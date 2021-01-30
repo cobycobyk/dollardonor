@@ -1,0 +1,23 @@
+.charname {
+  font-size: 20px;
+  /* letter-spacing: 1px; */
+  text-transform: uppercase;
+  margin-top: -30px;
+}
+
+.coralb {
+  background: var(--coral);
+}
+
+.coupon2 {
+  height:30px;text-align:center;text-transform:uppercase;font-weight:700;font-size:18px;padding:3px;
+}
+
+.open-code2 {
+  color: #16a085; background: none; border: hidden; text-transform:uppercase;font-weight:700;font-size:18px;
+}
+.open-code3 {
+  color:#16a085; background: none; border: hidden; text-transform:uppercase;font-weight:700;font-size:18px;
+}
+.midnight-yellow{background: var(--grey-4)}
+.midnight-mint{background: var(--mint)}

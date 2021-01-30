@@ -49,8 +49,8 @@ export default function HomePage({ charities }) {
         </Carousel.Item>
       </Carousel>
       <br/>
-      <div className="row text-center">
-        <div>{chars}</div>
+      <div>
+        {chars}
       </div>
     </>
   );

@@ -16,7 +16,7 @@ section{padding:2vmin 0}
 .dl .discount .type{font-size:20px;letter-spacing:1px;text-transform:uppercase;margin-top:-30px}
 .dl .descr{color:#999;margin-top:10px;padding:20px 15px}
 .dl .ends{padding:0 15px;color:#f1c40f;margin-bottom:10px}
-.dl .coupon {height:50px;text-align:center;text-transform:uppercase;font-weight:700;font-size:18px;padding:20px 15px}
+.dl .coupon {height:50px;text-align:center;text-transform:uppercase;font-weight:700;font-size:18px;padding:5px}
 .dl .coupon .open-code{color:#16a085; background: none; border: hidden; text-transform:uppercase;font-weight:700;font-size:18px;}
 .dl .coupon .code{letter-spacing:1px;border-radius:4px;margin-top:10px;padding:10px 15px;color:#f1c40f;background:#f0f0f0}
 .select {text-transform:uppercase;letter-spacing:3px;padding:10px 15px;text-align:center;font-size: x-large;}
