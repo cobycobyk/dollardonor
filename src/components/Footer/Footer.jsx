@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css'
 
 export default function Footer() {
@@ -25,9 +26,9 @@ export default function Footer() {
               <div className="col-lg-2 col-md-6 mb-4 mb-xs-0">
                 <h6 className="text-uppercase font-weight-bold mb-4">Company</h6>
                 <ul className="list-unstyled mb-0">
-                  <li className="mb-2"><a href="/about" className="text-muted">About Us</a></li>
-                  <li className="mb-2"><a href="/" className="text-muted">Our Charities</a></li>
-                  <li className="mb-2"><a href="/login" className="text-muted">Login</a></li>
+                  <li className="mb-2"><Link to="/about" className="text-muted">About Us</Link></li>
+                  <li className="mb-2"><Link to="/charities" className="text-muted">Our Charities</Link></li>
+                  <li className="mb-2"><Link to="/login" className="text-muted">Login</Link></li>
                 </ul>
               </div>
               <div className="col-lg-4 col-md-6 mb-lg-0">
