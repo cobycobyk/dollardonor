@@ -1,14 +1,15 @@
 import './HomePage.css';
 import CharityList from '../../components/CharityList/CharityList'
 import { Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default function HomePage({ charities }) {
-  const chars = charities.map(charity => 
+  const chars = charities.map(charity =>
     <CharityList
       key={charity._id}
       charity={charity}
-      />
-    );
+    />
+  );
   return (
     <>
       <Carousel >
@@ -48,8 +49,8 @@ export default function HomePage({ charities }) {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <br/>
-      <div>
+      <br />
+      <div className="row justify-content-center">
         {chars}
       </div>
     </>

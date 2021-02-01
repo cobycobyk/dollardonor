@@ -1,14 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const donationSchema = new Schema({
+const productSchema = new Schema({
   name: { type: String, required: true },
   price: { type: Number, required: true, default: 1 },
   currency: { type: String, default: 'usd'},
-  charity: { type: Schema.Types.ObjectId, ref: 'Charity'},
-  order: { type: Schema.Types.ObjectId, ref: 'Order'},
 }, {
   timestamps: true,
 });
 
-module.exports = mongoose.model('Donation', donationSchema);
+module.exports = mongoose.model('Product', productSchema);

@@ -1,5 +1,4 @@
 const Order = require('../../models/order');
-const Donation = require('../../models/donation');
 
 module.exports = {
   getOrders,

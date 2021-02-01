@@ -6,9 +6,9 @@ const logger = require('morgan');
 //ALWAYS require and configure near the top
 require('dotenv').config();
 //connect to the database ALWAYS after require .env
-require('./config/database')
-
+require('./config/database');
 const app = express();
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -28,6 +28,8 @@ const ensureLoggedIn = require('./config/ensureLoggedIn');
 const ensureAdmin = require('./config/ensureAdmin');
 app.use('/api/charities', require('./routes/api/charities'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
+app.use('/api/products', require('./routes/api/products'));
+app.use('/', require('./routes/api/stripe'));
 
 //the following 'catch all' route (note the *) is necessary
 //to return the index.html on all non-ajax requests

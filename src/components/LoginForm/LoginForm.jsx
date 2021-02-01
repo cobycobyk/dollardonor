@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import * as usersService from '../../utilities/users-service';
 import { useHistory } from 'react-router-dom';
+import './LoginForm.css';
 
-
-export default function LogIn({ setUser }) {
+export default function LogIn({ setUser, setShowLogin, showLogin }) {
   const [credentials, setCredentials] = useState({
     email: '',
     password: ''
@@ -32,17 +32,22 @@ export default function LogIn({ setUser }) {
   }
 
   return (
-    <div className="login-form">
-      <div className="form-container" onSubmit={handleSubmit}>
-        <form className="login-form-form" autoComplete="off" >
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
+    <div className="wrapper fadeInDown">
+      <div id="formContent" onSubmit={handleSubmit}>
+        <div className="fadeIn first">
+          <img src="https://i.imgur.com/W9JYIXE.png" alt="logo" width="60" />
+        </div>
+        <form>
+          <input type="text" id="login" className="fadeIn second" placeholder="email" name="email" value={credentials.email} onChange={handleChange} required />
+          <input type="password" id="password" className="fadeIn third" placeholder="password" name="password" value={credentials.password} onChange={handleChange} required />
+          <input type="submit" className="fadeIn fourth" value="Log In" />
         </form>
+        <p className="error-message">&nbsp;{error}</p>
+        <div id="formFooter" >
+          <h5>Need to create an account?</h5>
+          <input type="submit" className="underlineHover" onClick={() => setShowLogin(!showLogin)} value='Sign Up' />
+        </div>
       </div>
-      <p className="error-message">&nbsp;{error}</p>
     </div>
 
   );

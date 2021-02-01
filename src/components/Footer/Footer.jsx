@@ -17,10 +17,10 @@ export default function Footer() {
             <div className="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3"/>
               <p className="font-italic text-muted">Follow our social channels for your daily piece of feel good :)</p>
               <ul className="list-inline mt-4">
-                <li className="list-inline-item"><a href="https://www.twitter.com" target="_blank" title="twitter"><img className="social" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-512.png" alt=""/></a></li>
-                <li className="list-inline-item"><a href="https://www.facebook.com" target="_blank" title="facebook"><img className="social" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-512.png" alt=""/></a></li>
-                <li className="list-inline-item"><a href="https://www.instagram.com" target="_blank" title="instagram"><img className="social" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-512.png" alt=""/></a></li>
-                <li className="list-inline-item"><a href="https://www.youtube.com" target="_blank" title="youtube"><img className="social" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-512.png" alt=""/></a></li>
+                <li className="list-inline-item"><a href="https://www.twitter.com" rel="noreferrer" target="_blank" title="twitter"><img className="social" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-512.png" alt=""/></a></li>
+                <li className="list-inline-item"><a href="https://www.facebook.com" rel="noreferrer" target="_blank" title="facebook"><img className="social" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Facebook_colored_svg_copy-512.png" alt=""/></a></li>
+                <li className="list-inline-item"><a href="https://www.instagram.com" rel="noreferrer" target="_blank" title="instagram"><img className="social" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-512.png" alt=""/></a></li>
+                <li className="list-inline-item"><a href="https://www.youtube.com" rel="noreferrer" target="_blank" title="youtube"><img className="social" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-512.png" alt=""/></a></li>
               </ul>
             </div>
               <div className="col-lg-2 col-md-6 mb-4 mb-xs-0">

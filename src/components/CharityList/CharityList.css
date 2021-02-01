@@ -2,9 +2,10 @@
   font-size: 20px;
   /* letter-spacing: 1px; */
   text-transform: uppercase;
-  margin-top: -30px;
 }
-
+/* .charcard {
+width: 250px;
+} */
 .coralb {
   background: var(--coral);
 }
@@ -21,3 +22,7 @@
 }
 .midnight-yellow{background: var(--grey-4)}
 .midnight-mint{background: var(--mint)}
+
+.charlogo {
+  width: 128px;
+}

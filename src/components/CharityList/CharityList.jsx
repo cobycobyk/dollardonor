@@ -5,18 +5,15 @@ export default function CharityList({ charity }) {
   const pathName = charity.name.replace(/\s+/g, '').toLowerCase();
   return (
     <>
-      <section id="charcard">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-sm-6 col-md-3">
+            <div className="col-sm-6 col-md-3 ">
               <div className="dl">
                 <div className="brand">
                 </div>
                 <div className="discount coralb">
-                  <img src={charity.logo} alt="logo" />
+                  <img className="charlogo" src={charity.logo} alt="logo" />
                   <div className="charname">{charity.name}</div>
                 </div>
-                <div className="descr">
+                <div className="descr2">
                   <strong>{charity.snippet}</strong>
                 </div>
                 <div className="coupon2 midnight-mint">
@@ -27,9 +24,7 @@ export default function CharityList({ charity }) {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+
       </>
   );
 }

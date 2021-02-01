@@ -1,16 +1,20 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import './NewOrderPage.css';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import CheckoutForm from '../../components/CheckoutForm/CheckoutForm';
 
 export default function NewOrderPage() {
 
   const { state: { charity } } = useLocation();
-
   const [subPrice, setSubPrice] = useState(null)
+  const promise = loadStripe("pk_test_51IFlwABxDFc0cpgFrgbpTLT0kyx5Fg2yrd2gyjouE9ofLNM5gYLTFnVSGx8aHDUTi0hAyCkIoOagwALruPskCtsn00nh14rYid");
 
   function handleSubscription(n) {
     setSubPrice(n);
   }
+
 
   return (
     <>
@@ -34,7 +38,7 @@ export default function NewOrderPage() {
                   <strong>You are a Donor!</strong>
                 </div>
                 <div className="coupon midnight-blue">
-                  <button className="open-code">Subscribe!</button>
+                  <button className="open-code" onClick={() => handleSubscription(1)}>Subscribe!</button>
                 </div>
               </div>
             </div>
@@ -54,7 +58,7 @@ export default function NewOrderPage() {
                 </strong>
                 </div>
                 <div className="coupon midnight-blue">
-                  <button data-toggle="collapse" href="#code-2" className="open-code">Subscribe!</button>
+                  <button className="open-code" onClick={() => handleSubscription(5)}>Subscribe!</button>
                 </div>
               </div>
             </div>
@@ -74,7 +78,7 @@ export default function NewOrderPage() {
                 </strong>
                 </div>
                 <div className="coupon midnight-blue">
-                  <button data-toggle="collapse" href="#code-3" className="open-code" onClick={() => handleSubscription(10)}>Subscribe!</button>
+                  <button className="open-code" onClick={() => handleSubscription(10)}>Subscribe!</button>
                 </div>
               </div>
             </div>
@@ -82,9 +86,11 @@ export default function NewOrderPage() {
         </div>
       </section>
       {subPrice ?
-        <div>subPrice</div>
+        <Elements stripe={promise}>
+          <CheckoutForm subPrice={subPrice} />
+        </Elements>
         :
-        ''
+        <div>No subscription selected</div>
       }
     </>
   );
