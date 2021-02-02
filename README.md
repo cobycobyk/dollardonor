@@ -19,3 +19,11 @@
 
 ## Planned Next Steps:
 
+  1. I want to be able to search for charities
+  2. I want to be able to change my subscription plan
+  3. I want to enable email notifications every month
+  4. I want to label tax deductions
+  5. I want to be able to share to social platforms
+  6. I want to be able to make a one time donation
+  7. I want to update my email notifications
+  8. I want to pay via paypal
