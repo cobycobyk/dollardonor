@@ -6,7 +6,7 @@ export default function CharityList({ user, charity }) {
   return (
     <>
       <div className="col-md-4">
-        <div className="profile-card-6" style={{backgroundColor: '#'+charity.color}}><img src={charity.logo} />
+        <div className="profile-card-6" style={{backgroundColor: '#'+charity.color}}><img src={charity.logo} alt="logo" />
           <div className="profile-name">
             {charity.name}
           </div>

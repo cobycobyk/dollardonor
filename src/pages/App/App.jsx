@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
-import * as usersAPI from '../../utilities/users-api';
 import * as userService from '../../utilities/users-service';
 import * as charitiesAPI from '../../utilities/charities-api';
 import AuthPage from '../AuthPage/AuthPage';
