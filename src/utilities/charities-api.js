@@ -17,3 +17,7 @@ export function create(charity) {
 export function update(charity) {
   return sendRequest(`${BASE_URL}/${charity._id}`, 'PUT', charity)
 }
+
+export function deleteOne(charityId) {
+  return sendRequest(`${BASE_URL}/${charityId}`, 'DELETE')
+}

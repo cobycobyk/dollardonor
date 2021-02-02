@@ -5,6 +5,7 @@ module.exports = {
   show,
   create,
   update,
+  deleteOne,
 }
 
 async function index(req, res) {
@@ -25,4 +26,9 @@ async function create(req, res) {
 async function update(req, res) {
   const charity = await Charity.findByIdAndUpdate(req.params.id, req.body, {new: true,});
   res.status(200).json(charity)
+}
+
+async function deleteOne(req, res) {
+  const deletedCharity = await Charity.findByIdAndDelete(req.params.id);
+  res.status(200).json(deletedCharity);
 }

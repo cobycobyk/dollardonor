@@ -48,6 +48,11 @@ export default function App() {
     setCharities(newCharityArray);
     history.push('/charities')
   }
+  async function handleDeleteCharity(charityId) {
+    await charitiesAPI.deleteOne(charityId);
+    setCharities(charities.filter(charity => charity._id !== charityId))
+    history.push('/')
+  }
 
   return (
     <main className="App">
@@ -61,7 +66,7 @@ export default function App() {
                 <AuthPage setUser={setUser}/>
               </Route>
               <Route path="/charities/edit">
-                <EditCharityPage handleUpdateCharity={handleUpdateCharity}/>
+                <EditCharityPage handleDeleteCharity={handleDeleteCharity} handleUpdateCharity={handleUpdateCharity}/>
               </Route>
               <Route path="/charities/add">
                 <AddCharityPage handleAddCharity={handleAddCharity}/>

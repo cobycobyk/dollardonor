@@ -1,7 +1,7 @@
 import {useState, useEffect, useRef} from 'react';
 import {Link, useLocation} from 'react-router-dom';
 
-export default function EditCharityPage({handleUpdateCharity}){
+export default function EditCharityPage({handleUpdateCharity, handleDeleteCharity}){
 
   const location = useLocation()
 
@@ -150,6 +150,12 @@ export default function EditCharityPage({handleUpdateCharity}){
          &nbsp;&nbsp;
         <Link to='/'>CANCEL</Link>
       </form>
+      <button
+          className='btn btn-xs btn-danger margin-left-10'
+          onClick={() => handleDeleteCharity(formData._id)}
+        >
+          DELETE
+        </button>
     </>
   );
 }
