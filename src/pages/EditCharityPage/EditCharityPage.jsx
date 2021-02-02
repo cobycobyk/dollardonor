@@ -1,22 +1,22 @@
-import React, {useState, useRef, useEffect } from 'react';
+import {useState, useEffect, useRef} from 'react';
+import {Link, useLocation} from 'react-router-dom';
 
-export default function AddCharityPage({ handleAddCharity }){
-  const [invalidForm, setInvalidForm] = useState(true);
-  const [formData, setFormData] = useState({
-    name: '',
-    breed: 'Mixed',
-    age: '0'
-  })
+export default function EditCharityPage({handleUpdateCharity}){
 
+  const location = useLocation()
+
+  const [invalidForm, setValidForm] = useState(true);
+  const [formData, setFormData] = useState(location.state.charity)
+  
   const formRef = useRef();
 
   useEffect(() => {
-    formRef.current.checkValidity() ? setInvalidForm(false) : setInvalidForm(true);
+      formRef.current.checkValidity() ? setValidForm(false) : setValidForm(true)
   }, [formData]);
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    handleAddCharity(formData);
+    handleUpdateCharity(formData);
   }
 
   const handleChange = (e) => {
@@ -28,8 +28,8 @@ export default function AddCharityPage({ handleAddCharity }){
 
   return (
     <>
-      <h1>Add Charity</h1>
-      <form autoComplete="off" ref={formRef} onSubmit={handleSubmit}>
+      <h1>Edit Charity</h1>
+      <form ref={formRef} autoComplete="off" onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Name</label>
           <input
@@ -37,7 +37,7 @@ export default function AddCharityPage({ handleAddCharity }){
             name="name"
             value={formData.name}
             onChange={handleChange}
-            required 
+            required
           />
         </div>
         <div className="form-group">
@@ -57,7 +57,6 @@ export default function AddCharityPage({ handleAddCharity }){
             name="city"
             value={ formData.city}
             onChange={handleChange}
-            required 
           />
         </div>
         <div className="form-group">
@@ -67,7 +66,6 @@ export default function AddCharityPage({ handleAddCharity }){
             name="state"
             value={ formData.state}
             onChange={handleChange}
-            required
           />
         </div>
         <div className="form-group">
@@ -147,10 +145,11 @@ export default function AddCharityPage({ handleAddCharity }){
           className="btn"
           disabled={invalidForm}
         >
-          ADD CHARITY
+          SAVE CHARITY
         </button>
+         &nbsp;&nbsp;
+        <Link to='/'>CANCEL</Link>
       </form>
     </>
   );
-  
 }

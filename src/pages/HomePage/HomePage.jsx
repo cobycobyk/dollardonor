@@ -3,11 +3,12 @@ import CharityList from '../../components/CharityList/CharityList'
 import { Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-export default function HomePage({ charities }) {
+export default function HomePage({ user, charities }) {
   const chars = charities.map(charity =>
     <CharityList
       key={charity._id}
       charity={charity}
+      user={user}
     />
   );
   return (

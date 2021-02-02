@@ -1,7 +1,7 @@
 import './CharityListItem.css';
 import { Link } from 'react-router-dom';
 
-export default function CharityListItem({ charity, handleSubscribe }) {
+export default function CharityListItem({ user, charity, handleSubscribe }) {
   const hero = {
     width: "100%",
     height: "400px",
@@ -28,6 +28,19 @@ export default function CharityListItem({ charity, handleSubscribe }) {
         <h4>About {charity.name}</h4>
         {charity.mission}
       </section>
+      {user.isAdmin ? 
+      <Link
+          className='btn btn-xs btn-warning'
+          to={{
+            pathname: '/charities/edit',
+            state: {charity}
+          }}
+        >
+          EDIT
+        </Link>
+        :
+        ''
+      }
     </>
   );
 }

@@ -12,6 +12,7 @@ import EditProfilePage from '../EditProfilePage/EditProfilePage';
 import CharitiesListPage from '../CharitiesListPage/CharitiesListPage';
 import CharityDetailPage from '../CharityDetailPage/CharityDetailPage';
 import AddCharityPage from '../AddCharityPage/AddCharityPage';
+import EditCharityPage from '../EditCharityPage/EditCharityPage';
 import MyDonationsPage from '../MyDonationsPage/MyDonationsPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import Navigation from '../../components/Navigation/Navigation';
@@ -36,6 +37,16 @@ export default function App() {
   async function handleAddCharity(newCharityData) {
     const newCharity = await charitiesAPI.create(newCharityData);
     setCharities([...charities, newCharity]);
+    history.push('/charities')
+  }
+
+  async function handleUpdateCharity(updatedCharityData) {
+    const updatedCharity = await charitiesAPI.update(updatedCharityData);
+    const newCharityArray = charities.map(charity => {
+      return charity._id === updatedCharity._id ? updatedCharity : charity
+    })
+    setCharities(newCharityArray);
+    history.push('/charities')
   }
 
   return (
@@ -49,11 +60,14 @@ export default function App() {
               <Route path="/login">
                 <AuthPage setUser={setUser}/>
               </Route>
+              <Route path="/charities/edit">
+                <EditCharityPage handleUpdateCharity={handleUpdateCharity}/>
+              </Route>
               <Route path="/charities/add">
                 <AddCharityPage handleAddCharity={handleAddCharity}/>
               </Route>
               <Route path="/charities">
-                <CharitiesListPage charities={charities}/>
+                <CharitiesListPage user={user} charities={charities}/>
               </Route>
               <Route path="/charity-detail">
                 <CharityDetailPage />
@@ -71,7 +85,7 @@ export default function App() {
                 <MyDonationsPage user={user}/>
               </Route>
               <Route path="/">
-                <HomePage charities={charities}/>
+                <HomePage user={user} charities={charities}/>
               </Route>
               <Redirect to="/" />
             </Switch>

@@ -6,5 +6,6 @@ const ensureAdmin = require('../../config/ensureAdmin');
 router.get('/', charitiesCtrl.index);
 router.get('/:id', charitiesCtrl.show);
 router.post('/', ensureAdmin, charitiesCtrl.create);
+router.put('/:id', ensureAdmin, charitiesCtrl.update);
 
 module.exports = router;

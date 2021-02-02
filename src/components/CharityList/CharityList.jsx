@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import './CharityList.css';
 
-export default function CharityList({ charity }) {
-  const pathName = charity.name.replace(/\s+/g, '').toLowerCase();
+export default function CharityList({ user, charity }) {
+  // const pathName = charity.name.replace(/\s+/g, '').toLowerCase();
   return (
     <>
       <div className="col-md-4">
@@ -13,10 +13,6 @@ export default function CharityList({ charity }) {
           <div className="profile-position">{charity.snippet}</div>
           <div className="profile-overview">
             <div className="row text-center">
-              {/* <div className="col-xs-4">
-                <h3>1</h3>
-                <p>Subs</p>
-              </div> */}
               <div className="col-xs-4">
                 <h3>50</h3>
                 <p>Subs</p>
@@ -25,7 +21,7 @@ export default function CharityList({ charity }) {
               <div className="col-xs-4">
                 <h3>35</h3>
                 <p>Total Raised</p>
-                <Link className="open-code2" to={{ pathname: 'charity-detail', state: { charity } }}>More Info!</Link>
+                <Link className="open-code2" to={{ pathname: 'charity-detail', state: {user, charity } }}>More Info!</Link>
               </div>
             </div>
           </div>

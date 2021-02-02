@@ -23,11 +23,13 @@ export default function Navigation({ user, setUser }) {
               <NavDropdown.Item ><Link to="/profile">Profile</Link></NavDropdown.Item>
               <NavDropdown.Item><Link to="/pledges">My Donations</Link></NavDropdown.Item>
               {user.isAdmin ?
+              <>
+                <NavDropdown.Divider />
                 <NavDropdown.Item><Link to="/charities/add">Add Charity</Link></NavDropdown.Item>
+                </>
                 :
                 ''
               }
-              <NavDropdown.Divider />
               <NavDropdown.Divider />
               <NavDropdown.Item><Link to="/" onClick={handleLogOut}>Logout</Link></NavDropdown.Item>
             </NavDropdown>
