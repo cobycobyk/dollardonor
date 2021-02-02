@@ -6,7 +6,7 @@ import { Link, NavLink} from 'react-router-dom';
 export default function Navigation({ user, handleLogOut }) {
 
   return (
-    <Navbar bg="mint" expand="lg">
+    <Navbar bg="mint" expand="lg" className="navnav">
       <Navbar.Brand as={Link} to="/"><img src="https://i.imgur.com/W9JYIXE.png" alt="logo" width="60" className="d-inline-block align-top" /></Navbar.Brand>
       <Nav.Link as={NavLink} to="/"><img src="https://i.imgur.com/159ISA3.png" alt="logohome" height="30" /></Nav.Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />

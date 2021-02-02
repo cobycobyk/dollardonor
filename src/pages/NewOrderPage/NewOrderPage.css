@@ -1,8 +1,9 @@
-/* section{padding:2vmin 0}
+section{padding:2vmin 0}
+#labels{background-color: white;}
 .alizarin{background:#A1E8CC}
 .amethyst{background:#9b59b6}
 .emerald{background:#F27F7D}
-.midnight-blue{background:#FBDE74}
+.midnight-blue{background: var(--coral)}
 .peter-river{background:#FBDE74}
 .dl{background:#f0f0f0;padding:30px 0;border-radius:20px;position:relative; max-width: 300px;}
 .dl:before{content:" ";height:20px;width:20px;background:#ddd;border-radius:20px;position:absolute;left:50%;top:20px;margin-left:-10px}
@@ -18,8 +19,8 @@
 .dl .descr2{color:#999;margin-top:10px;padding:20px 15px; min-height: 140px;}
 .dl .ends{padding:0 15px;color:#f1c40f;margin-bottom:10px}
 .dl .coupon {height:50px;text-align:center;text-transform:uppercase;font-weight:700;font-size:18px;padding:5px}
-.dl .coupon .open-code{color:#16a085; background: none; border: hidden; text-transform:uppercase;font-weight:700;font-size:18px;}
+.dl .coupon .open-code{color:var(--charcoal); background: none; border: hidden; text-transform:uppercase;font-weight:700;font-size:18px;}
 .dl .coupon .code{letter-spacing:1px;border-radius:4px;margin-top:10px;padding:10px 15px;color:#f1c40f;background:#f0f0f0}
 .select {text-transform:uppercase;letter-spacing:3px;padding:10px 15px;text-align:center;font-size: x-large;}
 
- */
+

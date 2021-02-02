@@ -1,0 +1,33 @@
+.about-page {
+  display: flex;
+  flex-direction: column;
+}
+.about-title {
+  background-color: var(--white);
+}
+
+.about-section1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 4rem;
+  background-color: var(--grey-1);
+  padding-top: 10px;
+}
+.about-section2 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 4rem;
+  padding-bottom: 4rem;
+  background-color: var(--white);
+}
+.about-section3 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 4rem;
+  padding-bottom: 4rem;
+  background-color: var(--grey-1);
+}

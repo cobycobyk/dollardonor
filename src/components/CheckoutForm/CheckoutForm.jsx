@@ -26,7 +26,7 @@ export default function CheckoutForm({ subPrice }) {
   const cardStyle = {
     style: {
       base: {
-        color: "#32325d",
+        color: "#495159",
         fontFamily: 'Arial, sans-serif',
         fontSmoothing: "antialiased",
         fontSize: "16px",
@@ -68,7 +68,7 @@ export default function CheckoutForm({ subPrice }) {
 
   return (
     <>
-      <form id="payment-form" onSubmit={handleSubmit}>
+      <form id="payment-form" className="payment-form" onSubmit={handleSubmit}>
         <input
           type="text"
           value={email}

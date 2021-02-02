@@ -14,13 +14,14 @@
 
 *, *:before, *:after {
   box-sizing: border-box;
+  margin-top: 0 !important;
 }
 
 body {
   font-family: 'Montserrat Alternates', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--grey-4);
+  background-color: var(--white);
   height: 100vh;
   overflow-y: scroll;
 }
@@ -31,4 +32,6 @@ code {
 
 #root {
   height: 100%;
+  background-color: var(--white);
 }
+

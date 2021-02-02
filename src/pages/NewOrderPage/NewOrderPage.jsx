@@ -25,7 +25,7 @@ export default function NewOrderPage() {
       </div>
       <section id="labels">
         <h3>Select a subscription level</h3>
-        <div className="container">
+        <div className="container justify-content-center">
           <div className="row justify-content-center">
             <div className="col-sm-6 col-md-3">
               <div className="dl">
@@ -90,7 +90,7 @@ export default function NewOrderPage() {
           <CheckoutForm subPrice={subPrice} />
         </Elements>
         :
-        <div>No subscription selected</div>
+        <div></div>
       }
     </>
   );
