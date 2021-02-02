@@ -86,9 +86,16 @@ export default function NewOrderPage() {
         </div>
       </section>
       {subPrice ?
+      <div className="formdetails">
+        <div>
+          Your order is ${subPrice} per month
+        </div>
+        <div>
         <Elements stripe={promise}>
           <CheckoutForm subPrice={subPrice} />
         </Elements>
+        </div>
+      </div>
         :
         <div></div>
       }

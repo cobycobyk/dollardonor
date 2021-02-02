@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './CheckoutForm.css';
 import * as stripeAPI from '../../utilities/stripe-api';
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { Redirect, useHistory } from 'react-router-dom';
 
 export default function CheckoutForm({ subPrice }) {
   const [email, setEmail] = useState('');
@@ -12,6 +13,7 @@ export default function CheckoutForm({ subPrice }) {
   const [clientSecret, setClientSecret] = useState('');
   const stripe = useStripe();
   const elements = useElements();
+  const history = useHistory()
 
   useEffect(function () {
     // Create PaymentIntent as soon as the page loads
@@ -63,6 +65,7 @@ export default function CheckoutForm({ subPrice }) {
       setProcessing(false);
       setSucceeded(true);
     }
+    history.push('/pledges')
   };
 
 
@@ -98,7 +101,7 @@ export default function CheckoutForm({ subPrice }) {
         {/* Show a success message upon completion */}
         <p className={succeeded ? "result-message" : "result-message hidden"}>
         </p>
-    </form>
+      </form>
     </>
   );
 }

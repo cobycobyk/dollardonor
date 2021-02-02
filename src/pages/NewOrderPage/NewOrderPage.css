@@ -22,5 +22,5 @@ section{padding:2vmin 0}
 .dl .coupon .open-code{color:var(--charcoal); background: none; border: hidden; text-transform:uppercase;font-weight:700;font-size:18px;}
 .dl .coupon .code{letter-spacing:1px;border-radius:4px;margin-top:10px;padding:10px 15px;color:#f1c40f;background:#f0f0f0}
 .select {text-transform:uppercase;letter-spacing:3px;padding:10px 15px;text-align:center;font-size: x-large;}
-
+.formdetails {background-color: white;}
 
