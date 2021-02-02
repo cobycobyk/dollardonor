@@ -11,6 +11,7 @@ import ProfileDetailPage from '../ProfileDetailPage/ProfileDetailPage';
 import EditProfilePage from '../EditProfilePage/EditProfilePage';
 import CharitiesListPage from '../CharitiesListPage/CharitiesListPage';
 import CharityDetailPage from '../CharityDetailPage/CharityDetailPage';
+import AddCharityPage from '../AddCharityPage/AddCharityPage';
 import MyDonationsPage from '../MyDonationsPage/MyDonationsPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import Navigation from '../../components/Navigation/Navigation';
@@ -32,6 +33,10 @@ export default function App() {
     history.push('/profile')
   }
 
+  async function handleAddCharity(newCharityData) {
+    const newCharity = await charitiesAPI.create(newCharityData);
+    setCharities([...charities, newCharity]);
+  }
 
   return (
     <main className="App">
@@ -43,6 +48,9 @@ export default function App() {
               </Route>
               <Route path="/login">
                 <AuthPage setUser={setUser}/>
+              </Route>
+              <Route path="/charities/add">
+                <AddCharityPage handleAddCharity={handleAddCharity}/>
               </Route>
               <Route path="/charities">
                 <CharitiesListPage charities={charities}/>

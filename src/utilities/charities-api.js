@@ -9,3 +9,7 @@ export function getAll() {
 export function getOne(charity) {
   return sendRequest(`${BASE_URL}/${charity._id}`)
 }
+
+export function create(charity) {
+  return sendRequest(BASE_URL, 'POST', charity);
+}
