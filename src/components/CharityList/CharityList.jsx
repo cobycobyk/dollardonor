@@ -5,26 +5,34 @@ export default function CharityList({ charity }) {
   const pathName = charity.name.replace(/\s+/g, '').toLowerCase();
   return (
     <>
-            <div className="col-sm-6 col-md-3 ">
-              <div className="dl">
-                <div className="brand">
+      <div className="col-md-4">
+        <div className="profile-card-6"><img src={charity.logo} className="img img-responsive" />
+          <div className="profile-name">
+            {charity.name}
+          </div>
+          <div className="profile-position">Lorem Ipsum Donor</div>
+          <div className="profile-overview">
+            <div className="profile-overview">
+              <div className="row text-center">
+                <div className="col-xs-4">
+                  <h3>1</h3>
+                  <p>Rank</p>
                 </div>
-                <div className="discount coralb">
-                  <img className="charlogo" src={charity.logo} alt="logo" />
-                  <div className="charname">{charity.name}</div>
+                <div className="col-xs-4">
+                <Link className="open-code2" to={{ pathname: '/pledges/new', state: { charity } }}>Subscribe!</Link>
+                  <h3>50</h3>
+                  <p>Matches</p>
                 </div>
-                <div className="descr2">
-                  <strong>{charity.snippet}</strong>
-                </div>
-                <div className="coupon2 midnight-mint">
-                  <Link className="open-code2" to={{pathname: '/pledges/new', state: { charity }}}>Subscribe!</Link>
-                </div>
-                <div className="coupon2 midnight-yellow">
-                <Link className="open-code2" to={{pathname: 'charity-detail', state: { charity }}}>More Info!</Link>
+                <div className="col-xs-4">
+                <Link className="open-code2" to={{ pathname: 'charity-detail', state: { charity } }}>More Info!</Link>
+                  <h3>35</h3>
+                  <p>Goals</p>
                 </div>
               </div>
             </div>
-
-      </>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

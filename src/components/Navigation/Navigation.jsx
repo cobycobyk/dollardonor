@@ -8,14 +8,14 @@ export default function Navigation({ user, setUser }) {
   function handleLogOut() {
     userService.logOut();
     setUser(null);
-  }
+  } 
   return (
-    <Navbar sticky="top" bg="mint" expand="lg">
+    <Navbar bg="mint" expand="lg">
       <Navbar.Brand ><Link to="/"><img src="https://i.imgur.com/W9JYIXE.png" alt="logo" width="60" className="d-inline-block align-top" /></Link></Navbar.Brand>
+          <Nav.Link><Link to="/"><img src="https://i.imgur.com/159ISA3.png" alt="logohome" height="30" /></Link></Nav.Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link><Link to="/"><img src="https://i.imgur.com/SAi3uRX.png" alt="logohome" height="20" /></Link></Nav.Link>
+        <Nav className="ml-auto">
           <Nav.Link><Link to="/about">About</Link></Nav.Link>
           <Nav.Link><Link to="/charities">Our Charities</Link></Nav.Link>
           {user ?

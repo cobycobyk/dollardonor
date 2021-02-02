@@ -61,7 +61,7 @@ export default function EditProfilePage({ user, handleUpdateUser }) {
                           className="btn btn-primary"
                         >
                           SAVE
-                    </button>
+                        </button>
                         <Link className="btn btn-outline-primary" to='/profile'>CANCEL</Link>
                       </div>
                     </div>

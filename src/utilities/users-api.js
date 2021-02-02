@@ -11,5 +11,5 @@ export function login(credentials) {
 }
 
 export function updateUser(user) {
-  return sendRequest(`${BASE_URL}/${user._id}`, 'PUT', user)
+  return sendRequest(BASE_URL, 'PUT', user)
 }

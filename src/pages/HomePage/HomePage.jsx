@@ -16,7 +16,7 @@ export default function HomePage({ charities }) {
         <Carousel.Item >
           <img
             className="d-block w-100"
-            src="https://i.imgur.com/5jlUwZV.jpg"
+            src="https://i.imgur.com/xVsGcKc.jpg"
             alt="First slide"
           />
           <Carousel.Caption>
@@ -27,7 +27,7 @@ export default function HomePage({ charities }) {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://i.imgur.com/5jlUwZV.jpg"
+            src="https://i.imgur.com/xVsGcKc.jpg"
             alt="Third slide"
           />
 
@@ -39,10 +39,9 @@ export default function HomePage({ charities }) {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="https://i.imgur.com/5jlUwZV.jpg"
+            src="https://i.imgur.com/xVsGcKc.jpg"
             alt="Third slide"
           />
-
           <Carousel.Caption>
             <h3>We for We</h3>
             <p>As a community, together we can help those in need.</p>

@@ -27,12 +27,11 @@ export default function App() {
     }
     getCharities()
   }, []);
-
   async function handleUpdateUser(updatedUserData) {
-    const updatedUser = await usersAPI.updateUser(updatedUserData);
-    setUser(updatedUser);
-    history.push('/')
+    setUser(updatedUserData);
+    history.push('/profile')
   }
+
 
   return (
     <main className="App">
