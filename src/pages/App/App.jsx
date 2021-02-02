@@ -3,6 +3,7 @@ import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import * as usersAPI from '../../utilities/users-api';
+import * as userService from '../../utilities/users-service';
 import * as charitiesAPI from '../../utilities/charities-api';
 import AuthPage from '../AuthPage/AuthPage';
 import HomePage from '../HomePage/HomePage';
@@ -29,6 +30,12 @@ export default function App() {
     }
     getCharities()
   }, []);
+
+  function handleLogOut() {
+    userService.logOut();
+    setUser(null);
+  }
+
   async function handleUpdateUser(updatedUserData) {
     setUser(updatedUserData);
     history.push('/profile')
@@ -54,9 +61,10 @@ export default function App() {
     history.push('/')
   }
 
+
   return (
     <main className="App">
-      <Navigation user={user} setUser={setUser}/>
+      <Navigation user={user} handleLogOut={handleLogOut}/>
           <>
             <Switch>
               <Route path="/about">
@@ -95,7 +103,7 @@ export default function App() {
               <Redirect to="/" />
             </Switch>
           </>
-          <Footer />
+          <Footer user={user} handleLogOut={handleLogOut} />
     </main>
   );
 }

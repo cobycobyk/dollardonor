@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css'
 
-export default function Footer() {
+export default function Footer({ user, handleLogOut }) {
   const [newsletter, setNewsletter] = useState('')
 
   function handleChange(evt) {
@@ -14,7 +14,7 @@ export default function Footer() {
       <footer className="bg-mint d-flex flex-column ">
         <div className="container py-3">
           <div className="row py-4">
-            <div className="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" class="mb-3"/>
+            <div className="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="img/logo.png" alt="" width="180" className="mb-3"/>
               <p className="font-italic text-muted">Follow our social channels for your daily piece of feel good :)</p>
               <ul className="list-inline mt-4">
                 <li className="list-inline-item"><a href="https://www.twitter.com" rel="noreferrer" target="_blank" title="twitter"><img className="social" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-512.png" alt=""/></a></li>
@@ -28,7 +28,11 @@ export default function Footer() {
                 <ul className="list-unstyled mb-0">
                   <li className="mb-2"><Link to="/about" className="text-muted">About Us</Link></li>
                   <li className="mb-2"><Link to="/charities" className="text-muted">Our Charities</Link></li>
-                  <li className="mb-2"><Link to="/login" className="text-muted">Login</Link></li>
+                  {user ? 
+                <li className="mb-2"><Link to="/logout" className="text-muted" onClick={handleLogOut}>Logout</Link></li>
+                :  
+                <li className="mb-2"><Link to="/login" className="text-muted">Login</Link></li>
+                }
                 </ul>
               </div>
               <div className="col-lg-4 col-md-6 mb-lg-0">
