@@ -19,8 +19,8 @@ export default function Navigation({ user, setUser }) {
           <Nav.Link><Link to="/about">About</Link></Nav.Link>
           <Nav.Link><Link to="/charities">Our Charities</Link></Nav.Link>
           {user ?
-            <NavDropdown title="Account" id="basic-nav-dropdown">
-              <NavDropdown.Item><Link to="/profile">Profile</Link></NavDropdown.Item>
+            <NavDropdown title="Account" id="basic-nav-dropdown" >
+              <NavDropdown.Item ><Link to="/profile">Profile</Link></NavDropdown.Item>
               <NavDropdown.Item><Link to="/pledges">My Donations</Link></NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item><Link to="/" onClick={handleLogOut}>Logout</Link></NavDropdown.Item>

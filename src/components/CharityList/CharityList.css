@@ -7,32 +7,32 @@
   overflow: hidden;
   position: relative;
   margin: 10px auto;
-  cursor: pointer;
-  background-color: var(--coral);
+  /* cursor: pointer; */
+  /* background-color: var(--coral); */
   background-size: cover;
 }
 
 .profile-card-6 img {
   transition: all 0.15s linear;
-  height: 200px;
-  align-self: center;
+  height: 150px;
+  position:absolute;
+  top: 50px;
+  left: 80px;
 }
 .profile-card-6 .profile-name {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 25px;
+
+  font-size: 15px;
   font-weight: bold;
-  color: var(--charcoal);
+  color: var(--white);
   padding: 15px 20px;
   background: linear-gradient(140deg, rgba(0, 0, 0, 0.4) 50%, rgba(255, 255, 0, 0) 50%);
   transition: all 0.15s linear;
+  text-transform: uppercase;
 }
 .profile-card-6 .profile-position {
   position: absolute;
-  color: rgba(255, 255, 255, 0.4);
-  left: 30px;
-  top: 100px;
+  color: var(--white);
+  top: 200px;
   transition: all 0.15s linear;
 }
 
@@ -45,6 +45,9 @@
   color: #FFF;
   padding: 50px 0px 20px 0px;
   transition: all 0.15s linear;
+}
+.text-center {
+  justify-content:space-around;
 }
 
 .profile-card-6 .profile-overview h3 {
@@ -64,10 +67,13 @@
   padding-top: 20px;
 }
 
-.profile-card-6:hover .profile-position {
-  left: 40px;
-}
-
 .profile-card-6:hover .profile-overview {
   padding-bottom: 25px;
+}
+
+.open-code2 {
+  padding: 4px;
+  color: var(--yellow);
+  background-color:var(--charcoal);
+  border-radius: 3px;
 }

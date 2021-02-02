@@ -13,6 +13,7 @@ const charitySchema = new Schema({
   picture: { type: String },
   snippet: { type: String },
   mission: { type: String},
+  color: { type: String },
 }, {
   timestamps: true,
 });
