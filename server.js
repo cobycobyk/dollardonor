@@ -29,6 +29,7 @@ const ensureAdmin = require('./config/ensureAdmin');
 app.use('/api/charities', require('./routes/api/charities'));
 app.use('/api/orders', ensureLoggedIn, require('./routes/api/orders'));
 app.use('/api/products', require('./routes/api/products'));
+app.use('/api/donations', require('./routes/api/donations'));
 app.use('/', require('./routes/api/stripe'));
 
 //the following 'catch all' route (note the *) is necessary

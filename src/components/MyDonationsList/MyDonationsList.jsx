@@ -1,48 +1,13 @@
-export default function MyDonationsList({ orders }) {
-  // const orderItems = orders.map(order => 
-    
-  //   )
+// import order from "../../../models/order";
+
+export default function MyDonationsList({ charities, orders, donation }) {
+  const ords = orders.map(order =>
+     order._id
+    )
+  const chars = charities.some(charity => charity._id === donation.charity)
   return (
-    <div className="col-md-8">
-    <div className="card mb-3">
-      <div className="card-body">
-        <div className="row">
-          <div className="col-sm-3">
-            <h6 className="mb-0">Name</h6>
-          </div>
-          <div className="col-sm-9 text-secondary">
-            name
-          </div>
-        </div>
-        <hr />
-        <div className="row">
-          <div className="col-sm-3">
-            <h6 className="mb-0">Email</h6>
-          </div>
-          <div className="col-sm-9 text-secondary">
-           email
-          </div>
-        </div>
-        <hr />
-        <div className="row">
-          <div className="col-sm-3">
-            <h6 className="mb-0">State</h6>
-          </div>
-          <div className="col-sm-9 text-secondary">
-            state
-          </div>
-        </div>
-        <hr />
-        <div className="row">
-          <div className="col-sm-3">
-            <h6 className="mb-0">Zipcode</h6>
-          </div>
-          <div className="col-sm-9 text-secondary">
-            cip
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <li>
+      Order Number: {donation.name.slice(-6).toUpperCase()}.
+    </li>
   );
-}
+} 

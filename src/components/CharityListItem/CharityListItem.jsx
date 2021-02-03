@@ -14,8 +14,8 @@ export default function CharityListItem({ user, charity, handleSubscribe }) {
 
   return (
     <>
-      <section className="bgimage d-flex flex-reverse-column" style={hero}>
-        <Link className="btn btn-xl btn-sub align-self-center"
+      <section className="fadeInDown banner" style={hero}>
+        <Link className="btn btn-xl btn-sub align-self-center fadeIn first"
           to={{
             pathname: '/pledges/new',
             state: { charity }

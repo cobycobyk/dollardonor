@@ -5,7 +5,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from '../../components/CheckoutForm/CheckoutForm';
 
-export default function NewOrderPage() {
+export default function NewOrderPage({ user, handleAddDonation}) {
 
   const { state: { charity } } = useLocation();
   const [subPrice, setSubPrice] = useState(null)
@@ -92,7 +92,7 @@ export default function NewOrderPage() {
         </div>
         <div>
         <Elements stripe={promise}>
-          <CheckoutForm subPrice={subPrice} />
+          <CheckoutForm subPrice={subPrice} user={user} charity={charity} handleAddDonation={handleAddDonation} />
         </Elements>
         </div>
       </div>

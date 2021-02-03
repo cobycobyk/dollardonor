@@ -5,9 +5,16 @@
 
 .charity-about {
   padding: 2vmin ;
-  background-color: var(--coral);
+  background-color: var(--grey-2);
+  margin-top: 10px;
 }
 
 .btn-sub {
-  background-color: var(--yellow);
+  background-color: var(--coral);
+  justify-self: end;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column-reverse;
 }

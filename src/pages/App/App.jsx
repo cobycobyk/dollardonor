@@ -4,6 +4,8 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import * as userService from '../../utilities/users-service';
 import * as charitiesAPI from '../../utilities/charities-api';
+import * as ordersAPI from '../../utilities/orders-api';
+import * as donationsAPI from '../../utilities/donations-api';
 import AuthPage from '../AuthPage/AuthPage';
 import HomePage from '../HomePage/HomePage';
 import AboutPage from '../AboutPage/AboutPage';
@@ -21,6 +23,7 @@ import Footer from '../../components/Footer/Footer';
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [charities, setCharities] = useState([])
+  const [orders, setOrders] = useState([])
   const history = useHistory()
   useEffect(function() {
     async function getCharities() {
@@ -29,6 +32,18 @@ export default function App() {
     }
     getCharities()
   }, []);
+
+  useEffect(function() {
+    async function getOrders() {
+      const orders = await ordersAPI.getOrders();
+      setOrders(orders)
+    }
+    getOrders();
+  }, [])
+
+  async function handleAddDonation(charityId, subPrice) {
+    await donationsAPI.addOne(charityId, subPrice);
+  }
 
   function handleLogOut() {
     userService.logOut();
@@ -91,10 +106,10 @@ export default function App() {
                 <ProfileDetailPage user={user}/>
               </Route>
               <Route path="/pledges/new">
-                <NewOrderPage user={user}/>
+                <NewOrderPage handleAddDonation={handleAddDonation} user={user}/>
               </Route>
               <Route path="/pledges">
-                <MyDonationsPage user={user}/>
+                <MyDonationsPage charities={charities} user={user} orders={orders} />
               </Route>
               <Route path="/">
                 <HomePage user={user} charities={charities}/>

@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import './CheckoutForm.css';
 import * as stripeAPI from '../../utilities/stripe-api';
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-export default function CheckoutForm({ subPrice }) {
+export default function CheckoutForm({ subPrice, user, handleAddDonation, charity }) {
   const [email, setEmail] = useState('');
   const [succeeded, setSucceeded] = useState(false);
   const [error, setError] = useState(null);
@@ -65,6 +65,7 @@ export default function CheckoutForm({ subPrice }) {
       setProcessing(false);
       setSucceeded(true);
     }
+    handleAddDonation(charity._id, subPrice)
     history.push('/pledges')
   };
 

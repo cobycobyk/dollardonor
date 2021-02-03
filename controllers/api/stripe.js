@@ -14,7 +14,6 @@ async function paymentIntent(req, res) {
     currency: 'usd',
     metadata: {integration_check: 'accept_a_payment'},
   });
-  console.log(paymentIntent);
   const clientSecret = paymentIntent.client_secret;
   res.status(200).json(clientSecret);
 }
