@@ -10,7 +10,7 @@
 
 ## Technologies Used
 
-> React.js | Node.js | Express | JavaScript | HTML5 | CSS3 | MongoDB | Mongoose
+> React.js | Node.js | Express | JavaScript | HTML5 | CSS3 | MongoDB | Mongoose | Stripe API
 
 ## Getting Started
 
